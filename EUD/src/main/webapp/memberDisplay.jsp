@@ -41,6 +41,14 @@ if(!details){
 members =(ArrayList<Member>)session.getAttribute("members");
 for(int i=0;i<members.size();i++){ 
 	if(details && members.get(i).getId()==(int)session.getAttribute("idDetails")){
+			if(members.get(i).getWaddress()==null)
+			{
+				members.get(i).setWaddress("");
+			}
+			if(members.get(i).getHaddress()==null)
+			{
+				members.get(i).setHaddress("");
+			}
 %>
 <tr>
 <td><%= members.get(i).getName() %></a></td>
